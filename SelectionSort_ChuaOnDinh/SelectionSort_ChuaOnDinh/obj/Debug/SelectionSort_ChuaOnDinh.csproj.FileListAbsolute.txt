@@ -1,0 +1,7 @@
+E:\CSharp_Repo\SelectionSort_ChuaOnDinh\SelectionSort_ChuaOnDinh\bin\Debug\SelectionSort_ChuaOnDinh.exe.config
+E:\CSharp_Repo\SelectionSort_ChuaOnDinh\SelectionSort_ChuaOnDinh\bin\Debug\SelectionSort_ChuaOnDinh.exe
+E:\CSharp_Repo\SelectionSort_ChuaOnDinh\SelectionSort_ChuaOnDinh\bin\Debug\SelectionSort_ChuaOnDinh.pdb
+E:\CSharp_Repo\SelectionSort_ChuaOnDinh\SelectionSort_ChuaOnDinh\obj\Debug\SelectionSort_ChuaOnDinh.csproj.AssemblyReference.cache
+E:\CSharp_Repo\SelectionSort_ChuaOnDinh\SelectionSort_ChuaOnDinh\obj\Debug\SelectionSort_ChuaOnDinh.csproj.CoreCompileInputs.cache
+E:\CSharp_Repo\SelectionSort_ChuaOnDinh\SelectionSort_ChuaOnDinh\obj\Debug\SelectionSort_ChuaOnDinh.exe
+E:\CSharp_Repo\SelectionSort_ChuaOnDinh\SelectionSort_ChuaOnDinh\obj\Debug\SelectionSort_ChuaOnDinh.pdb
