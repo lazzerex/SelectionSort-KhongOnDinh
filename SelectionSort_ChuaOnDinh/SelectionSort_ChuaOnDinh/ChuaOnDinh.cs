@@ -23,16 +23,16 @@ class Program
         }
 
         // sửa đổi 1: thay đổi cách so sánh để xét cả giá trị lẫn vị trí gốc
-        /*public int CompareTo(Item other)
-        {
+        /* public int CompareTo(Item other)
+         {
 
-            int valueComparison = Value.CompareTo(other.Value);
-            if (valueComparison == 0)
-            {
-                return OriginalPosition.CompareTo(other.OriginalPosition);
-            }
-            return valueComparison;
-        }*/
+             int valueComparison = Value.CompareTo(other.Value);
+             if (valueComparison == 0)
+             {
+                 return OriginalPosition.CompareTo(other.OriginalPosition);
+             }
+             return valueComparison;
+         }*/
     }
 
     static void StableSelectionSort(List<Item> arr)
@@ -42,6 +42,7 @@ class Program
         for (int i = 0; i < n - 1; i++)
         {
             int minIdx = i;
+
 
             for (int j = i + 1; j < n; j++)
             {
@@ -70,7 +71,7 @@ class Program
             }
 
             // sửa đổi 3: sử dụng phương pháp dịch chuyển thay vì hoán đổi
-            /*if (minIdx != i)
+           /* if (minIdx != i)
             {
                 Item minItem = arr[minIdx];
                 // dịch chuyển các phần tử để giữ nguyên thứ tự tương đối
@@ -86,7 +87,7 @@ class Program
         List<Item> arr = new List<Item>();
         for (int i = 0; i < size; i++)
         {
-            int value = rand.Next(1, size / 3);
+            int value = rand.Next(1, size / 3); //chỉnh sửa để các giá trị trùng nhau xuất hiện nhiều hơn
             arr.Add(new Item(value, i));
         }
         return arr;
@@ -149,11 +150,25 @@ class Program
         }
     }
 
+    static void PrintArray(List<Item> arr, string message)
+    {
+        Console.WriteLine(message);
+        foreach (var item in arr)
+        {
+            Console.Write($"[{item.Value}({item.OriginalPosition})] ");
+        }
+        Console.WriteLine("\n");
+    }
+
+
     static void Main()
     {
         Console.OutputEncoding = Encoding.Unicode;
         Console.OutputEncoding = Encoding.Unicode;
-        const int ARRAY_SIZE = 1000;
+
+        const int ARRAY_SIZE = 1000; //CHỈNH ĐỂ DÙNG HÀM IN MẢNG (nhớ chỉnh trước khi in mảng)
+
+
         const int NUM_RUNS = 100;
 
         Timing timing = new Timing();
@@ -169,9 +184,22 @@ class Program
         List<Item> arr = GenerateRandomArray(ARRAY_SIZE);
         List<Item> originalArr = new List<Item>(arr);
 
+
+        //-----------------------In Mảng Gốc----------------------------------//
+
+        //PrintArray(originalArr, "Mảng gốc:"); //in mảng gốc
+
+        //-----------------------In Mảng Gốc----------------------------------//
+
         timing.startTime();
         StableSelectionSort(arr);
         timing.StopTime();
+        //-----------------------In Mảng Đã Sắp Xếp----------------------------------//
+
+        //PrintArray(arr, "Mảng sau khi sắp xếp:"); //in mảng đã sắp xếp
+
+        //-----------------------In Mảng Đã Sắp Xếp----------------------------------//
+
 
         // kiểm tra các phần tử trùng nhau
         CompareArrays(originalArr, arr);
@@ -191,7 +219,7 @@ class Program
             if (!CheckStability(originalArr, arr))
             {
                 isStable = false;
-                Console.WriteLine($"\nPhát hiện mất tính ổn định ở lần chạy {run + 1}");
+                Console.WriteLine($"Phát hiện mất tính ổn định ở lần chạy {run + 1}");
             }
         }
 
@@ -205,3 +233,5 @@ class Program
         Console.WriteLine($"- Thời gian dài nhất: {runTimes.Max().TotalMilliseconds:F3}ms");
     }
 }
+
+
