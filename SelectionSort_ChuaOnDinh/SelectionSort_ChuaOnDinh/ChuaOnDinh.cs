@@ -147,6 +147,13 @@ class Program
                 Console.Write($"[{pos.Item.Value}({pos.Item.OriginalPosition})] ");
             }
             Console.WriteLine();
+
+            Console.Write("Chỉ số hiện tại của các phần tử trong mảng sau khi đã sắp xếp: ");
+            foreach (var pos in sortedPositions)
+            {
+                Console.Write($"[{pos.Item.Value}({pos.Index})] ");
+            }
+            Console.WriteLine();
         }
     }
 
